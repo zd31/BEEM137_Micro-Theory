@@ -1,0 +1,147 @@
+\documentclass[12pt, letterpaper]{article}
+
+\usepackage{amsmath}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+
+
+% Preamble
+\title{Classical Consumer Theory}
+\author{Ziteng Dong}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\section{Introduction}
+
+In this chapter, we study the preference-based approach to consumer demand.
+\begin{itemize}
+    \item Basic Properties of Preference Relations
+        \begin{itemize}
+            \item Monotonicity
+        \end{itemize}
+        \begin{itemize}
+            \item Convexity
+        \end{itemize}
+    \item Continuity of Utility Function
+    \item Utility Maximisation Problem
+    \item Expenditure Minimisation Problem
+    \item Duality
+\end{itemize}
+
+\section{Basic Properties of Preference Relations}
+
+\textbf{Two assumption on PR}
+\begin{itemize}
+    \item \textbf{Monotonicity} 
+    
+    A PR is monotone if $x \in X$, $y \gg x$ implies $y \succ x$.
+    Strictly monotone if $y > x$ implies $y \succ x$.
+
+    \textbf{Local non-satiation} (A weaker form of monotonicity): A PR is locally non-satiated if $\forall \ x \in X$ and $\forall \ \epsilon$, $\exists \ y \in X$, s.t. $|y-x|<\epsilon$ and $y \succ x$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{Monotonicity.jpg}
+    \caption{\textbf{Graphical Explanation of Monotonicity}.
+            The right one should be \textit{local non-satiation}.}
+    \label{Monotonicity}
+\end{figure}
+
+Local non-satiation rules out the \textit{thick} indifference set.
+    
+    \item \textbf{Convexity}
+    
+    A PR is convex if for $\forall \ x,y,z \in X$, $y \succeq x$ and $z \succeq x$, then $\alpha y + (1-\alpha) z \succeq x$, for $\alpha \in [0,1]$.
+
+    Graphically, a PR is convex if its upper contour set is convex.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.75\linewidth]{Indifference Curve_Convex PR.jpg}
+        \caption{\textbf{Illustration of Indifference Curve and Convex Preference}
+        The left one gives examples of \textit{indifference curve}, which must be parallel.
+        All the area to the right of an indifference curve is \textit{Upper Contour Set} and all the area to the left of an indifference curve is \textit{Lower Contour Set}.
+        The local non-satiation assumption rules out the \textit{thick} indifference set.
+        The middle one shows the difference between the \textit{convex} and \textit{concave} sets.
+        The right one shows the difference between the \textit{convex} and \textit{strictly convex} sets.
+        }
+        \label{Indifference Curve_Convex PR}
+    \end{figure}
+    
+\end{itemize}
+
+\section{Continuity and Utility Function}
+
+\textbf{Continuity} is another assumption imposed on a PR to ensure the existence of a utility function.\\
+
+\textbf{Definition}: A PR is continuous if for any sequence of $\{(x_n, y_n)\}_{n=1}^{\infty}$, s.t. $y_n \succeq x_n$ for all $n$ and $(x, y) = \lim_{n \rightarrow \infty} (x_n, y_n)$, then $y \succeq x$.\\
+
+Graphically, the upper and lower contour sets of a preference relation are closed.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{UCS_LCS.jpg}
+    \caption{\textbf{An Illustration of UCS and LCS}.
+            If the \textcolor{red}{red dashed line} is an \textit{open} border of both sets, the this PR does not satisfy continuity.
+            Because when $y$ in UCS approaches the \textcolor{red}{border}, it will jump to the LCS.
+            However, if If the \textcolor{red}{red dashed line} is an \textit{closed} border of both sets, we can still have $y_U \succeq y_L$.
+            }
+    \label{UCS_LCS}
+\end{figure}
+
+\noindent
+By now, we have the assumptions we need to have a utility function with nice properties to represent a PR.\\
+
+\textbf{From PR to Utility Function}\\
+
+\textbf{Proposition}: If a PR is rational and continuous, then there exists a continuous utility function $u(x)$ that represents this PR.
+
+\textit{Note}: Not all $u(x)$ representing a PR are continuous.\\
+
+\noindent
+With a utility function, we can do a lot of things in a numerical way.
+
+\begin{itemize}
+    \item Indifferent set can be written as $\{y \in X|y \sim x\} \Leftrightarrow \{y \in X|u(y) = u(x)\}$.
+    \item By taking derivative of $u(x)$ w.r.t. two goods:
+        \begin{align*}
+        \underbrace{\frac{\partial \ u}{\partial \ x_1} dx_1}_{Marginal \ Change \ in \ x_1} 
+        + \underbrace{\frac{\partial \ u}{\partial \ x_2} dx_2}_{Marginal \ Change \ in \ x_2}
+        =   \underbrace{0}_{Still \ on \ Indifference \ Curve}
+        \end{align*}
+
+    Then the slope of the indifference curve is:
+
+        \begin{align*}
+        \frac{dx_2}{dx_1} = - \underbrace{\frac{\partial \ u / \partial \ x_1}{\partial \ u / \partial \ x_2}}_{Marginal \ Rate \ of \ Substitution}
+        \end{align*}
+\end{itemize}
+
+\textbf{Implications of Properties of PR on Utility Function}\\
+\begin{itemize}
+    \item Monotonicity of PR implies an increasing $u(x)$ :
+        \begin{align*}
+        \frac{\partial \ u}{\partial \ x_1} \geq 0
+        \qquad
+        \frac{\partial \ u}{\partial \ x_2} \geq 0
+        \end{align*}
+        more consumption has larger utility.
+    \item Convexity of PR implies a quasi-concave $u(x)$:
+        $u(\alpha x +(1-\alpha)y) \geq min\{u(x), u(y)\}$ for $\alpha \in [0,1]$.
+
+        A quasi-concave $u(x)$ means a diminishing Marginal Rate of Return (second derivatives are negative).
+\end{itemize}
+
+
+
+
+Utility Maximisation Problem, Expenditure Minimisation Problem, and their Duality will be covered in the next Note.
+
+\end{document}

@@ -1,0 +1,90 @@
+\documentclass[12pt, a4paper]{article}
+
+% preamble
+\title{Problem Set 1 \\ \large BEEM137 Micro Theory}
+\author{Ziteng Dong}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{}
+
+\subsection{Method 1}
+
+\begin{center}
+    \begin{tabular}{ccc}
+      $|X|$ & $|2^X|$ &      \\
+        0   &   1     & $2^0$\\
+        1   &   2     & $2^1$\\
+        2   &   4     & $2^2$\\
+        ... &  ...    & ...  \\
+        n   &         & $2^n$\\
+    \end{tabular}
+\end{center}
+
+\subsection{Method 2}
+
+Each element in the set $X$ is either in its subset or not in its subset.
+In other words, here are two possibilities for each item.
+So, the total number of possible subsets of $X$ with $n$ elements is $2 \times 2 \times ... \times 2 = 2^n$.
+
+\subsection{Method 3}
+
+???
+
+\section{}
+
+NO.
+This choice correspondence does not satisfy WARP.
+
+$C(\{x, y\}) = \{x, y\} \Rightarrow x \sim^* y$
+Or in words, the agent has revealed indifference between $x$ and $y$ when they are presented in the budget set.
+
+According to WARP, the agent should choose both $x$ and $y$ when they are in the budget set and one of the two is chosen.
+However, the second correspondence $C(\{x, y, z\}) = \{x, z\}$ violates this rule.
+
+\section{}
+
+$x \succ y$ implies that $x \succeq y$ and $\neg y \succeq x$.
+
+Since $\succeq$ is rational, it has the property of transitivity. 
+Based on this, we have $x \succeq y \succeq z \Rightarrow x \succeq z$.
+
+We can also have $z \succeq y$ given $y \succeq z$. However, the relation $z \succeq x$ cannot be established.
+
+\section{}
+
+Since the correspondence $C$ is single-valued, there must be only one output given one input $B$.
+
+$C(B)=x$ reveals that only $x$ will be chosen when $x$ and $y$ are in the same budget set. 
+In other words, if $y$ were chosen, then $x$ is not in the same budget set.
+ 
+Therefore, $C(B^{\prime}) = y$ with $x, y \in B^{\prime}$ is contrary to the rule above.
+
+\section{}
+
+If a preference relation is rational, then it has properties of completeness and transitivity.
+
+A utility function $u(.)$ has following properties:
+
+\begin{itemize}
+
+    \item $\forall x, y \in X$, we have either $u(x) \geq u(y)$ or $u(y) \geq u(x)$, which proves completeness;
+
+    \item Because $u(.)$ is strictly increasing, if $u(x) \geq u(y)$ and $u(y) \geq u(z)$, then we have $u(x) \geq u(z)$, which establishes transitivity.
+    
+\end{itemize}
+
+Therefore, a rational preference relation can be represented by a utility function.
+
+\section{}
+
+If a preference relation is rational, then it must have the properties of completeness and transitivity.
+To satisfy completeness, every two choices must be comparable.
+
+Let $X = {x, y, z} $, $\mathcal{B}={{x, y, z}}$, and $B = {x, y ,z}$.
+If we have $C(B)=x$, we know that x is revealed to be at least as good as $y$ and $z$, which essentially satisfies WARP. However, we don't know if $y$ and $z$ are comparable. So, it fails to establish completeness.
+
+
+\end{document}

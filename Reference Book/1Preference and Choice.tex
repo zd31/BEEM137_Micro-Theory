@@ -1,0 +1,127 @@
+\documentclass[12pt, letterpaper]{article}
+
+\usepackage{amsmath}
+\usepackage[margin=1in]{geometry}
+
+% Preamble
+\title{Preferences and Behaviour Choices}
+\author{Ziteng Dong}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\section{Introduction}
+The individual decision problem starts with a set of \textbf{possible alternatives} ($X$) from which the agent must choose.\\
+
+\textbf{Two approaches to modelling individual choice behaviour}
+
+\begin{itemize}
+    \item Preference-Based (Preference Relation)\\
+    - imposing rationality axioms on agents' preference\\
+    - analysing the consequences of the preference for agents' choice\\
+    - it is about preferences
+    \item Choice-Based\\
+    - assumption on the choice behaviour directly\\
+    - key assumption: Weak Axiom of Revealed Preference\\
+    - modelling observable choice behaviour
+\end{itemize}
+
+\section{Preference Relation}
+The preference relation is denoted by $\succeq$, which only tells the relation between two alternatives (binary relation) in the set of $X$.
+
+\vspace{1em}
+
+Say $x, y \in X$, 
+
+    we read $x \succeq y$ as "x is at least as good as y" or "x is weakly preferred to y";
+    
+    we read $x \succ y$ as "x is (strictly) preferred to y";
+    
+    we read $x \sim y$ as "x is indifferent to y".
+
+\subsection{Rationality}
+
+\textbf{Definition}: A preference relation $\succeq$ is rational if it meets:
+\begin{itemize}
+    \item Completeness: for all $x, y \in X$, we have $x \succeq y$ or $y \succeq x$ or both;
+    \item Transitivity: for all $x, y, z \in X$, if $x \succeq y$ and $y \succeq z$, then $x \succeq z$.
+    
+    Note that both are strong assumptions. 
+    Completeness says that the agent has a clear preference between any two possible alternatives; 
+    transitivity says that the agent will not have preference in a cycle when facing a sequence of pairwise options (i.e., a cycle such as $x \succeq y$, $y \succeq z$, then $z \succeq x$ will not happen).
+\end{itemize}
+
+Cases against transitivity:
+\begin{itemize}
+    \item \textit{Just perceptible differences}: When an agent is presented with pairwise options but with differences hard to discern (e.g., 98\% red and 96\% red), it might be indifferent. 
+    If lighter colours are shown progressively, the agent may remain indifferent between options. However, if the agent is shown 98\% red and 88\% red, it might tell the difference.
+    \item \textit{Framing problem}: Say Dr. Stephen wants to buy an IPhone (\pounds1200) and a compatible charger(\pounds25). 
+    This is the price in Tesco and you tell him that Morrisons has a promotion on the charger with a deduction of \pounds 5. 
+    Would he buy them at Tesco or Morrisons? What if the \%5 discount is on the IPhone?
+
+    Experiments show that the fraction of participants who would go to Morrisons if the \pounds5 promotion is on the charger(\pounds25) is \textit{much higher} than the fraction if the \pounds5 promotion is on the IPhone (\pounds1200).
+\end{itemize}
+
+\subsection{Utility Functions}
+
+A utility function quantifies the preference by assigning a numerical value to each element in $X$, ranking the elements to match consumer's preference.\\
+
+\textbf{Definition}: $x(\cdot)$ is a utility function representing preference relations $\succeq$, if for $\forall \ x, y \in X$,
+
+$$
+x \succeq y \Leftrightarrow u(x) \geq u(y)
+$$
+
+Any\textit{ strictly increasing} function can be a utility function to represent a preference relation as long as it is rational. 
+Or we can say that only a \textbf{rational} preference relation can be represented by a non-unique utility function. [See proof in Exercise 1]
+
+\section{Choice Rules}
+
+The agent's choice behaviour can be represent by the \textbf{choice structure}, which is formed by the \textbf{budget sets} $\mathcal{B}$ and \textbf{choice correspondence }$C(\cdot)$.\\ 
+
+The budget sets $\mathcal{B} \subset 2^X$ and within $\mathcal{B}$, there are $B \in \mathcal{B}$ and $B \subset X$.\\
+
+The choice correspondence $C(\cdot)$ takes $B$ as input and gives a set of commodities in B as output, or in mathematical form $C(B) \subset B$.\\
+
+\textbf{Weak Axiom of Revealed Preference}\\
+
+WARP assumes that consumer's observed choice behaviour should show a certain amount of consistency.\\
+
+\textbf{Definition}: A choice structure satisfies WARP:\\
+
+If for $B \in \mathcal{B}$ with $x, y \in B$, we have $x \in C(B)$, then for $\forall \ B^{\prime} \in \mathcal{B}$ with $x, y \in B^{\prime}$ and $y \in C(B^{\prime})$, we must also have $x \in C(B^{\prime})$.
+
+This is saying that if we have $C(\{x, y\}) = x$, we cannot have $C(\{x, y, z\}) = y$.\\
+
+\textit{Note}: $C(B)$ is the observed choice behaviour, and it only reveals what we observe.
+We can use $\succeq^*$ to denote the observed choice behaviour. For example, say we have $C(\{x, y\}) = x$, then $x \succeq^* y$ or $x$ is \textit{revealed at least as good as} $y$.
+
+\section{The Relationship between Preference Relations and Choice Rules}
+
+\textbf{From $\succeq$ to $(\mathcal{B}, C(\cdot))$}.
+
+If a $\succeq$ is rational, then the $(\mathcal{B}, C(\cdot))$ generated by it satisfies WARP.
+
+\textbf{Proof}:     
+If we know from the preference relations that $x \succeq y$, for $x, y \in B$, then we have $x \in C(B)$. 
+Suppose $x, y \in B^{\prime}$, and $y \succeq z$ for $\forall \ z \in B^{\prime}$. The choice structure of this preference relation says $y \in C(B^{\prime})$. By transitivity, we have $x \succeq y$, so $y \in C(B^{\prime})$. Therefore, WARP is satisfied.\\
+
+\noindent 
+\textbf{From $(\mathcal{B}, C(\cdot))$ to $\succeq$}.
+
+This way doesn't necessarily work. [See the counter example in the Exercises]
+
+\section{Exercise}
+
+1. Suppose the set of alternatives $X$ is finite. Show that a preference relation is rational if and only if it can be represented by a utility function.\\
+
+\noindent
+2.Suppose that $X=\{x, y, z\}$ and $\mathcal{B}$
+
+
+
+\end{document}

@@ -1,0 +1,183 @@
+\documentclass[12pt, letterpaper]{article}
+
+\usepackage{amsmath}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+
+
+% Preamble
+\title{Consumer Choice}
+\author{Ziteng Dong}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\section{Introduction}
+
+In this chapter, we study the choice-based approach to consumer demand by introducing the \textit{Walrasian world}.
+\begin{itemize}
+    \item Walrasian Budget Set
+    \item Walrasian Demand Function
+\end{itemize}
+
+\section{Terminologies}
+
+\textbf{Commodities}: the goods and services that are available to purchase in the market.
+A commodity vector/bundle contains $L$ goods and the amount of each good.
+$$
+x \in R_+^L \ , \ x = (x_1, x_2,...,x_L)
+$$
+
+This vector is what we use to represent an agent's consumption bundle.\\
+
+\noindent
+\textbf{Consumption Set}: $X$, a subset of commodity space $ R^L$. 
+It contains the consumption bundles that an agent can consume given the constraints (excluding budget).
+
+$$
+X = \{x | x_l \geq 0, \forall l = 1,...,L \} 
+$$
+
+The consumption set is \textbf{\textit{convex}}, meaning that if two \textit{consumption bundles} $x$ and $x^{\prime}$ are both elements of \textit{consumption set} $X$, then the bundle $x^{\prime \prime} = \alpha x + (1-\alpha) x^{\prime}$ is also in $X$.\\
+
+\noindent
+\textbf{Walrasian/Competitive Budget Set}: a set of all consumption bundles in the market affordable to an agent with wealth $w$ and facing prices $p$.
+
+$$
+B_{p, w} = \{ x \in X|pc\cdot x \leq w\}
+$$
+
+\textit{Note}: Walrasion budget set is a subset of the consumption set with budget constraints.
+The consumption bundles are various and they are elements in the consumption set and Walrasian budget set.\\
+
+\noindent
+\textbf{Budget Hyperplane}: the set $\{x \in X|p \cdot x = w\}$.\\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{Consumer Theory_Budget set.jpg}
+    \caption{\textbf{Illustration of Budget Set}.
+                    The \textcolor{cyan}{blue area} is the Walrasian budget set with $p, w$. \textcolor{green!60!black}{Prices} are orthogonal to the budget hyperplane.
+                    }
+    \label{Budegt Set}
+\end{figure}
+
+When there are two commodities in the consumption bundle, then it is called a \textit{Budget Line}.
+
+It is a convex set.
+
+Prices $p$ is orthogonal to the budget hyperplane because $p \cdot x = p \cdot x^{\prime} = w$, so we have $p \cdot \Delta x =0$.
+
+\section{Demand Function}
+
+The Walrasian Demand function $x(p,w)$ outputs a consumption bundle chosen by the consumer given input $p$ and $w$.\\
+
+\textbf{Assumptions on the Walrasian Demand Function}
+
+\begin{itemize}
+    \item \textit{Homogeneous of degree $0$}:\\
+    $$
+    x(\alpha p, \alpha w) = x(p, w)
+    $$
+
+    Graphically, the budget line does not change as long as $p$ and $w$ are scaled by the same \textit{positive} factor.
+
+    \item \textit{Walras' law}:\\
+    $$
+    p \cdot x(p,w) = w
+    $$
+
+    Graphically, the output of the Walrasian demand function is a point on the budget hyperplane (line). 
+    
+\end{itemize}
+
+\section{WARP for Consumer Demand}
+
+\textbf{WARP in terms of Walrasian demand function}\\
+
+$\forall x, y \in X$, if $\exists x, y \in B_{p,w}, x(p,w)=x$ and $x, y \in B_{p^{\prime}, w^{\prime}}$ and $ x(p^{\prime}, w^{\prime})=y$, then we have $x(p^{\prime}, w^{\prime})=x$.\\
+
+\textbf{Definition}: The Walrasian demand function $x(p,w)$ satisfies the WARP\\
+
+if $\forall x(p, w), x(p^{\prime}, w^{\prime})$, $p \cdot x(p^{\prime}, w^{\prime}) \leq w$ and $x(p^{\prime}, w^{\prime}) \neq x(p, w)$, then $p^{\prime} \cdot x(p, w) > w^{\prime}$.\\
+
+In English, it says that if an agent facing $p, w$ chooses $x(p, w)$ when $x(p^{\prime}, w^{\prime})$ is affordable (meaning that this agent has revealed its preference for $x(p, w)$), then $x(p, w)$ should not be affordable if $x(p^{\prime}, w^{\prime})$ is chosen in the situation of $p^{\prime}, w^{\prime}$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{WARP in Consumer Demand.jpg}
+    \caption{\textbf{Illustration of WARP Violation in Consumer Demand}.
+            \textcolor{orange}{$x(p,w)$} is the chosen consumption bundle with \textcolor{orange}{$p, w$};
+            To satisfy WARP in the situation of \textcolor{cyan}{$p^{\prime}, w^{\prime}$}, we should expect an agent to chooes consumption bundle in the \textcolor{green!60!black}{green part} of the \textcolor{cyan}{blue budget line}.}
+    \label{WARP Violation}
+\end{figure}
+
+\textbf{Wealth Effect}\\
+
+Here we examine how changes in wealth $w$ affect consumer demand.
+
+By taking derivative of $b_l(p,w) = \frac{p_l \cdot x_l(p,w)}{w}$ w.r.t. $w$, which gives us the unit change of commodity $l$ when wealth $w$ changes one unit, we have luxury goods if $\frac{\partial b_l(p,w)}{\partial w} > 0$ and necessity goods (including inferior) if $\frac{\partial b_l(p,w)}{\partial w} < 0$.\\
+
+\textbf{Price Effect} \\ 
+
+Here we examine how changes in prices $p$ affect consumer demand. 
+
+Taking derivative of $x_l(p,w)$ w.r.t. $p$, we can have one unit change of commodity $l$ when prices $p$ change one unit.\\
+
+\textbf{Compensated Price}
+
+Changes in prices affect consumer choice in two ways:
+\begin{itemize}
+    \item the slope of the budget line
+    \item the effective wealth level
+\end{itemize}
+
+To isolate this effect on wealth, we compensate the agent by changing its wealth which makes its initial consumption bundle just affordable at the new prices. In maths, it means $w^{\prime} = p^{\prime} \cdot x(p,w)$.
+
+The change in wealth is $\Delta w = (p^{\prime}-p) \cdot x(p,w)$, and we call this \textbf{Slutsky Wealth Compensation}.
+
+
+If $x(p,w)$ is homogeneous of degree zero and satisfies Walras' law, then $x(p,w)$ satisfies WARP, which is equivalent to
+
+for any compensated price change $(p,w) \rightarrow (p^{\prime}, \underbrace{p^{\prime} \cdot x(p,w))}_{w^{\prime}}$, we have 
+
+$$
+(p^{\prime}-p)[x(p^{\prime},w^{\prime})- x(p,w)] \leq 0
+$$
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{Compensated Prices.jpg}
+    \caption{\textbf{Illustration of Compensated Prices}.
+            After compensating the agent, the \textcolor{cyan}{blue dashed budget line} shifts upward to where it just across the initial consumption bundle \textcolor{orange}{$x(p,w)$}, which is the \textcolor{cyan}{blue budget line}.
+            According to WARP, every bundle on the left of \textcolor{orange}{$x(p,w)$} should be chosen as \textcolor{orange}{$x(p,w)$} is just affordable;
+            but choices on the right (\textcolor{green!60!black}{green part}) are WARP non-violating.
+            }
+    \label{Compensated Prices}
+\end{figure}
+
+\textbf{Slutsky Equation}
+
+\begin{align*}
+\frac{\partial \ x_l(p,w)}{\partial \ p_k} \bigg|_{compensated}
+=   \frac{\partial \ x_l(p,w)}{\partial \ p_k} 
+    +   \frac{\partial \ x_l(p,w)}{\partial \ w} \cdot x_k(p,w)
+\end{align*}
+
+By rearranging, we have a decomposition of the uncompensated change in price:
+
+\begin{align*}
+\underbrace{\frac{\partial \ x_l(p,w)}{\partial \ p_k}}_{Total \ Effect}
+=   \underbrace{\frac{\partial \ x_l(p,w)}{\partial \ p_k} \bigg|_{compensated}}_{Substitution \ Effect}
+    -   \underbrace{\frac{\partial \ x_l(p,w)}{\partial \ w} \cdot x_k(p,w)}_{Income \ Effect}
+\end{align*}
+
+
+
+\end{document}

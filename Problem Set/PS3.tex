@@ -1,0 +1,233 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+
+\title{Problem Set 3 \\ \large BEEM137 Micro Theory}
+\author{Ziteng Dong}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem 1}
+
+\subsection{}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{PS3_1_Indifference Curves.jpg}
+    \caption{\textbf{Examples of Indifference Curves}. \ Each colour area and the lines both on its left and under it have the same utility.}
+    \label{fig:placeholder}
+\end{figure}
+
+\subsection{}
+
+A preference is locally non-satiated if $x, y \in X$, and $\forall \ \epsilon>0$, $\exists \ y $ such that $|y-x| < \epsilon$ and $y \succ x$.
+
+Let $x_1 = 1.3, x_2 = 3.1$, then the corresponding utility is $U(x_1, x_2) = 1$. 
+Say we have another consumption bundle $x_1^{\prime} = 1.9, x_2^{\prime} = 9.1$, which has larger amounts of both commodities, but its utility is still $U(x_1^{\prime}, x_2^{\prime}) = 1$. 
+It means that the consumer is indifferent between the two different consumption bundle, one of which is larger than the other.
+This is against the definition of being locally non-satiated.
+
+\vspace{2em}
+
+A preference relation is convex if the upper contour set is convex, or if $x, y, z \in X$, $x \succ z$ and $y \succ z$, then $\alpha x + (1-\alpha) y \succ z$ for $\forall \ \alpha \in [0, 1]$.
+
+This preferences relation is convex because the upper contour set is convex.
+
+\vspace{2em}
+
+A preferences relation is continuous if its upper and lower contour sets are closed, or for any sequence of ${(x_n, y_n)} = \lim_{n =1 }^{\infty} (x_n, y_x)$, such that $y_n \succ x_n$ for all $n$ and $(x, y) = \lim_{n \rightarrow \infty} (x_n, y_n)$, then $y \succeq x$.
+
+This preference relation is not continuous as its lower contour set is not closed as the indifference curve is not included. 
+
+\subsection{}
+
+$x(p, w) = \{(x_1, x_2)|p(x_1, x_2) \leq w, x_1=x_2 \}$
+
+\section{P2}
+
+\subsection{}
+
+A utility function $u(\cdot)$ is strictly quasi-concave if 
+$u[\alpha x + (1-\alpha) y] > min\{u(x), u(y)\}$, 
+$u(x)\neq u(y)$, 
+for $\forall \ \alpha \in (0,1)$.\\
+
+Let $u(x) < u(y)$ and $z = \alpha x + (1-\alpha) y$. The utility of $z$ is:
+$$
+u(z)
+=
+    u[\alpha x + (1-\alpha) y]
+=
+    [\alpha x_1 + (1-\alpha) y_1 + 1] \ [\alpha x_2 + (1-\alpha) y_2]
+$$.
+
+When $\alpha \rightarrow 0$, $u(z) \rightarrow u(x)$;
+When $\alpha \rightarrow 1$, $u(z) \rightarrow u(y)$.
+Since the utility function is strictly increasing, we have
+$$u(x) < u(z) < u(y)$$
+So, the utility function is strictly quasi-concave.
+
+\subsection{}
+
+$$
+\mathcal{L}(x_1, x_2, \lambda) 
+=
+    (x_1 + 1) x_2 
+-
+    \lambda (2 - 4x_1 - x_2)
+$$
+
+The FOCs are:
+
+$$
+\frac{\partial \mathcal{L}}{\partial x_1} = x_2 + 4\lambda = 0
+$$
+$$
+\frac{\partial \mathcal{L}}{\partial x_2} = x_1 + 1 + \lambda = 0
+$$
+$$
+\frac{\partial \mathcal{L}}{\partial \lambda} = -(2 - 4x_1 - x_2) = 0
+$$
+
+By solving the equation system, we have the consumer's demand $x_1 = 0.25, x_2 = 3$.
+
+\subsection{}
+
+$$
+\mathcal{L}(x_1, x_2, \lambda) 
+=
+    (x_1 + 1) x_2 
+-
+    \lambda (w - p_1 x_1 - p_2 x_2)
+$$
+
+The FOCs are:
+
+$$
+\frac{\partial \mathcal{L}}{\partial x_1} = x_2 + p_1 \lambda = 0
+$$
+$$
+\frac{\partial \mathcal{L}}{\partial x_2} = x_1 + 1 + p_2 \lambda = 0
+$$
+$$
+\frac{\partial \mathcal{L}}{\partial \lambda} = -(w - p_1 x_1 - p_2 x_2) = 0
+$$
+
+By solving the equation system, we have $x_1 = \frac{w - p_1}{2p_1}$, $x_2 = \frac{w + p_1}{2 p_2}$.
+
+So, $x_1(p, w) = \frac{w - p_1}{2p_1}$, 
+$x_2 (p,2) = \frac{2 + p_1}{2 p_2}$
+
+\subsection{}
+
+The indirect utility function is 
+$$
+v(p, w) 
+= 
+    u(x(p,w))
+= 
+    (\frac{w - p_1}{2p_1} + 1) (\frac{w + p_1}{2 p_2})
+= 
+    \frac{(w+p_1)^2}{2 p_1 p_2}
+$$
+
+\section{P3}
+
+\subsection{}
+
+A utility function $u(\cdot)$ is quasi-concave if 
+$u[\alpha x + (1-\alpha) y] \geq min\{u(x), u(y)\}$, 
+for $\forall \ \alpha \in (0,1)$.\\
+
+Let $u(x) < u(y)$, and $z = \alpha x + (1-\alpha) y$ for $\alpha \in [0,1]$.
+The utility of $z$ is:
+$$
+u(z) = (\alpha x_1 + (1-\alpha) y_1)^{\theta} + 
+       (\alpha x_2 + (1-\alpha) y_2)^{\theta}
+$$
+which is smaller than $u(y)$ but greater than $u(x)$.
+
+So, the CES utility function is quasi-concave.
+
+\subsection{}
+
+The Lagrangian function is:
+$$
+\mathcal{L} (x_1, x_2, \lambda) = x_1^{\theta} +x_2^{\theta} - \lambda (w - p_1 x_1 - p_2 x_2)
+$$
+
+The FOCs are:
+
+$$
+\frac{\partial \mathcal{L}}{\partial x_1} = \theta x_1^{\theta - 1} + p_1 \lambda = 0
+$$
+$$
+\frac{\partial \mathcal{L}}{\partial x_2} = \theta x_2^{\theta - 1} + p_2 \lambda = 0
+$$
+$$
+\frac{\partial \mathcal{L}}{\partial \lambda} = -(w - p_1 x_1 - p_2 x_2) = 0
+$$
+
+By solving the equation system, we have 
+$$x_1 = \frac{w}{p_1 + p_2 (\frac{p_2}{p_1})^{\frac{1}{\theta - 1}}}$$
+$$x_2 = \frac{w (\frac{p_2}{p_1})^{\frac{1}{\theta - 1}}}{{p_1 + p_2 (\frac{p_2}{p_1})^{\frac{1}{\theta - 1}}}}$$
+
+\vspace{2em}
+
+$\forall \ \alpha >0$, 
+$$
+x_1(\alpha p, \alpha w) 
+=  
+    \frac{ \alpha w}{\alpha p_1 + \alpha p_2 (\frac{\alpha p_2}{\alpha p_1})^{\frac{1}{\theta - 1}}} 
+= 
+    \frac{w}{p_1 + p_2 (\frac{p_2}{p_1})^{\frac{1}{\theta - 1}}}
+=
+    x_1(p, w)
+$$
+
+$$
+x_2(\alpha p, \alpha w) 
+= 
+    \frac{\alpha w (\frac{\alpha p_2}{\alpha p_1})^{\frac{1}{\theta - 1}}}{{\alpha p_1 + \alpha p_2 (\frac{\alpha p_2}{\alpha p_1})^{\frac{1}{\theta - 1}}}} 
+=
+    \frac{w (\frac{p_2}{p_1})^{\frac{1}{\theta - 1}}}{{p_1 + p_2 (\frac{p_2}{p_1})^{\frac{1}{\theta - 1}}}}
+=
+    x_2(p, w)
+$$
+
+The cancellation of $\alpha$ in both functions ensures the hod 0.
+
+\subsection{}
+
+From the above results, we have
+
+$$\frac{x_1 (p, w)}{x_2 (p, w)} = (\frac{p_1}{p_2})^{\frac{1}{\theta - 1}}$$
+
+$$
+\frac{\partial \frac{x_1 (p, w)}{x_2 (p, w)}}{\partial \frac{p_1}{p_2}}
+=
+    \frac{1}{\theta - 1}(\frac{p_1}{p_2})^{\frac{1}{\theta - 1} -1}
+$$
+
+$$
+\frac{\frac{p_1}{p_2}}{\frac{x_1 (p, w)}{x_2 (p, w)}}
+=
+    \frac{p_1}{p_2} (\frac{p_1}{p_2})^{\frac{1}{1-\theta}}
+=
+    (\frac{p_1}{p_2})^{\frac{1}{1-\theta}+1}
+$$
+
+$$
+\epsilon(p,w) 
+= 
+    -\frac{1}{\theta - 1}(\frac{p_1}{p_2})^{\frac{1}{\theta - 1} -1} 
+\cdot 
+    (\frac{p_1}{p_2})^{\frac{1}{1-\theta}+1}
+=
+    \frac{1}{1 - \theta}
+$$
+
+\end{document}

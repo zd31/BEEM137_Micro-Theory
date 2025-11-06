@@ -1,0 +1,86 @@
+\documentclass[12pt, letterpaper]{article}
+
+\usepackage{amsmath}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+
+
+% Preamble
+\title{Producer Theory}
+\author{Ziteng Dong}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\section{Introduction}
+
+We study the supply side of the economy, that is firms' production activities.
+
+\section{Production Sets}
+
+\textbf{Definition} 
+
+The same as the consumption set, \textit{Production Set} is a subset of the commodity space $R^L$ and is denoted by $Y$.\\
+
+\textbf{Production Vector/Plan}
+
+$y = \{y_1, y_2,..., y_L\}$ is known as the \textit{Production Vector/Plan}, in which the elements can be any real number. 
+$y_l < 0$ means that the net output of commodity $l$ is negative, usually taken as input.
+
+The \textit{production set} $Y$ contains all the possible sets of \textit{production plans} $y$.\\
+
+\textbf{Properties of production sets}
+
+\begin{itemize}
+    \item $Y$ is nonempty and closed.
+    \item \textit{No free lunch}. If $y \in Y$ and $y \geq 0$, then $y=0$. In English, it means that if there are no inputs, then $y$ must be $0$. The firm cannot produce something from nothing.
+
+    This one ensures that the transformation frontier goes across the original point.
+    
+    \item \textit{Shut down}. This means $0 \in Y$. There is a possibility for the firm to shut down.
+
+    \item \textit{Free disposal}. If $y \in Y$ and $y^{\prime} \leq y$, then $y^{\prime} \in Y$. 
+
+    \item \textit{Irreversibility}. If $y \in Y$ and $y \neq 0$, then $-y \notin Y$. It is impossible to reverse a production process.
+
+    \item \textit{Additivity}. It $y, y^{\prime} \in Y$ then $y + y^{\prime} \in Y$.
+
+    \item \textit{Return to scale}.
+        \begin{itemize}
+            \item \textit{Nonincreasing}. If $y \in Y$, then $\alpha \ y \in Y$ for $\alpha \in [0,1]$.
+            \item \textit{Nondecreasing}. If $y \in Y$, then $\alpha \ y \in Y$ for $\alpha \in [1, \infty]$.
+            \item \textit{Constant}. If $y \in Y$, then $\alpha \ y \in Y$ for $\alpha \in [0,\infty]$.
+        \end{itemize}
+\end{itemize}
+
+
+The production sets describe technology, not limits on resources. That is, given all and enough inputs, we can double the output simply by doubling the inputs. If it is not, then theoretically it must be that not all inputs were accounted for. The proposition below warps this idea up.
+
+For any convex production set $Y$, satisfying shut-down ($0 \in Y$), $\exists$ a CRS, convex set $Y^{\prime}$ s.t. $Y = \{ y \in R^L | (y, -1) \in Y^{\prime} \}$.
+
+
+\section{Transformation Function}
+
+To describe the production set $Y$, we use the \textit{transformation function} $F(\cdot)$. 
+$$
+Y = \{ y \in R^L | F(y) \leq 0\}
+$$
+ $\{ y \in R^L | F(y) = 0\}$ are points at the boundary of $Y$, which is called the \textit{transformation frontier}.\\
+
+\textbf{Marginal Rate of Transformation}:
+Suppose that $F(\cdot)$ is differentiable and that there is a production plan $\bar{y}$ on the transformation frontier, then for commodities $l$ and $k$, the ratio
+$$
+MRT_{lk}(\bar{y}) |_{F(\bar{y})=0} = \frac{\partial F(\bar{y})/\partial y_l}{\partial F(\bar{y})/\partial y_k}
+$$
+is called the \textit{marginal rate of transformation (MRT)} of good $l$ for good $k$.
+
+MRT means that giving up one unit of output of good $l$, how much more the output of good $k$ the firm can produce. The denominator is the one increasing because of giving up the numerator one.
+
+
+\end{document}

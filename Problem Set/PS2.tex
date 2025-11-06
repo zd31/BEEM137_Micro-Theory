@@ -1,0 +1,134 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+
+\title{Problem Set 2 \\ \large BEEM137 Micro Theory}
+\author{Ziteng Dong}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{}
+
+Let $p_1, p_2$ be the prices of goods in the first and the second period;
+
+\noindent Let $x_1, x_2$ be the amount of goods consumed by the consumer in the first and the second period.
+
+Then we have the Walrasian Budget:
+$$\{x_1, x_2 | p_1 x_1 + p_2 x_2 \leq w \}$$
+
+\section{}
+
+The homogeneity of degree zero implies that 
+$$x(p, w) = x(\lambda p, \lambda w), for \ \lambda>0$$
+
+By multiplying $\lambda$ by wealth $w$ and price of each commodity $p$, we have 
+$$
+x_1 (\lambda p, \lambda w) 
+= 
+    \frac{\lambda p_2}{\lambda p_1 + \lambda p_2 + \lambda p_3} \frac{\lambda w}{\lambda p_1} 
+= 
+    \frac{p_2}{p_1 + p_2 + p_3} \frac{w}{p_1} = x_1 (p, w)
+$$ 
+
+The cancellation occurs to every demand function, irrelevant to the value of $\beta$.
+
+\vspace{2em}
+
+The Walras' law indicates that 
+$$ p \cdot x (p, w) = w$$
+
+To satisfy Walras' Law, the following equation must be true:
+
+\begin{align*}
+p_1 \cdot x_1 (p, w) + 
+p_2 \cdot x_2 (p, w) + 
+p_3 \cdot x_3(p, w) 
+&= 
+    \frac{p_1 p_2}{p_1 + p_2 + p_3} \frac{w}{p_1} + 
+    \frac{p_3 p_2}{p_1 + p_2 + p_3} \frac{w}{p_2} + 
+    \frac{\beta p_1 p_3}{p_1 + p_2 + p_3} \frac{w}{p_3} \\ 
+&= 
+    \frac{\beta p_1 + p_2 + p_3}{p_1 + p_2 + p_3} \ w \\
+&=
+    w
+\end{align*}
+
+If $\beta = 1$, then the above equation is true; 
+otherwise, it cannot hold. 
+
+\vspace{2em}
+
+Therefore, when $\beta=1$ the demand function satisfies both hod 0 and Walras' Law;
+when $\beta \in (0,1)$, it only satisfies hod 0.
+
+\section{}
+
+\subsection{}
+
+The Walras' law indicates that 
+$$ p \cdot x (p, w) = w$$
+
+In this case where $p= \{3, 6\}$, we have 
+$$
+p \cdot x (p, w) 
+=
+    3 \times 4 + 6 \times 5 
+= 
+    42
+$$
+
+So, the set of possible demands at the new prices should be
+$$W = \{(x_1, x_2) | 5 x_1 + 2 x_2 = 42 \}$$
+
+\subsection{}
+
+The cost of the original bundle at the new price is:
+$$
+p^{\prime} \cdot x (p, w) 
+=
+    5 \times 4 + 2 \times 5 
+= 
+    30
+$$
+which is lower than the wealth $w=42$.
+This is saying that the original bundle is still affordable at the new price.
+
+To satisfy WARP, the set of possible demand should be
+$$
+\{(x_1, x_2) | 
+    p^{\prime} x(p^{\prime},w) \leq 42  
+    \ \ and \ \ 
+    px(p^{\prime},w) > 42\}
+$$
+
+\section{}
+
+The matrix of costs of each observed choice and the prices:
+
+\[
+\left[
+\begin{array}{c|ccc}
+  & p^1 & p^2 & p^3 \\ \hline
+x^1 & 8 & 8 & 9 \\
+x^2 & 9 & 8 & 8 \\
+x^3 & 8 & 9 & 8
+\end{array}
+\right]
+\]
+
+At price $p^1$, $x^2$ costs 9 wealth which is not affordable. 
+We have observed that $x^1$ is revealed at least as good as $x^3$;
+
+At price $p^2$, $x^3$ costs 9 wealth which is not affordable. 
+We have observed that $x^2$ is revealed at least as good as $x^1$;
+
+At price $p^3$, $x^1$ costs 9 wealth which is not affordable. 
+We have observed that $x^3$ is revealed at least as good as $x^2$.
+
+These revealed choices satisfy WARP and the property of completeness of rational preference relations.
+However, they are not transitive, as $x^1 \succ x^3$, $x^2 \succ x^1$, and $x^3 \succ x^2$, which implies $x^2 \succ x^1 \succ x^3 \succ x^2$.
+
+\end{document}
